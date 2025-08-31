@@ -24,7 +24,7 @@ print("Probabilities", probs)
 
 # pick predicted class
 # np.argmax return the index of maximum probability
-prexicted_index = np.argmax(probs)
+predicted_index = np.argmax(probs)
 # convert the index into human readable like index 2 -> rabits
-predicted_class = classes[prexicted_index]
+predicted_class = classes[predicted_index]
 print("Predicted class", predicted_class)
