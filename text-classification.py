@@ -8,6 +8,6 @@ probs = exponential / np.sum(exponential)
 print("Probabilities", probs)
 
 predicted_index = np.argmax(probs)
-predicted_class = classes[predicted_index]
+predicted_class = text[predicted_index]
 
 print("Predicted text", predicted_class)
