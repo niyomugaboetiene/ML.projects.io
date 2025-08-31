@@ -10,7 +10,7 @@ image = np.array([[1, 0],
 # predict our model outputs this define how each model is important
 # hight number more likely
 # for real image classification
-logits = model.predict(image)
+# logits = model.predict(image)
 logits = np.array([2.0, 5.0, 6.0])
 
 # apply numercal stable softmax to avoid crash of the program
