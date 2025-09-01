@@ -20,4 +20,8 @@ vec3 = img3.flatten()
 dist_same = np.sqrt(np.sum((vec1 - vec2) ** 2))
 dist_diff = np.sqrt(np.sum((vec1 - vec3) ** 2))
 
-print ("")
+print ("Distance between tow 0's: ", dist_same)
+print("Distance between '0' and '5'", dist_diff)
+
+# show the images
+fig, axes = plt.subplot(1, 3, figsize=(6, 2))
