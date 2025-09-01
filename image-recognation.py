@@ -34,8 +34,10 @@ print("Distance between '0' and '5'", dist_diff)
 # create image with 1 row and 3 column, each image has 6 width and 2 height
 # axes is the list of axes image 
 # axes[0] is the lef, axes[1] is the middle image, axes[2] is the right image
+# axes it like each single image
 fig, axes = plt.subplots(1, 3, figsize=(6, 2))
-# fig is list of figure
+# fig is list of figure image canvas
+# cmap it specify color map, imshow display 2D array as iimage, set_title -> adds title to each image
 axes[0].imshow(img1, cmap='gray'); axes[0].set_title("Digit 0")
 axes[1].imshow(img2, cmap='gray'); axes[1].set_title("Digit 1")
 axes[2].imshow(img3, cmap="gray"); axes[2].set_title("Digit 5")
