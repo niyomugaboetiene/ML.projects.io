@@ -1,7 +1,9 @@
 import numpy as np
 # sklearn.datasets is library for ML used of experimenting image recognation
 from sklearn.datasets import load_digits
+# load_digits is built-in dataset of handwritten digits from 0 to 9
 import matplotlib.pyplot as plt
+# displaying image
 
 # load digits
 digits = load_digits()
