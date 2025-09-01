@@ -31,7 +31,11 @@ print ("Distance between tow 0's: ", dist_same)
 print("Distance between '0' and '5'", dist_diff)
 
 # show the images
+# create image with 1 row and 3 column, each image has 6 width and 2 height
+# axes is the list of axes image 
+# axes[0] is the lef, axes[1] is the middle image, axes[2] is the right image
 fig, axes = plt.subplots(1, 3, figsize=(6, 2))
+# fig is list of figure
 axes[0].imshow(img1, cmap='gray'); axes[0].set_title("Digit 0")
 axes[1].imshow(img2, cmap='gray'); axes[1].set_title("Digit 1")
 axes[2].imshow(img3, cmap="gray"); axes[2].set_title("Digit 5")
