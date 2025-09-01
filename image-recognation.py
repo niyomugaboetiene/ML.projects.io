@@ -1,4 +1,5 @@
 import numpy as np
+# sklearn.datasets is library for ML used of experimenting image recognation
 from sklearn.datasets import load_digits
 import matplotlib.pyplot as plt
 
