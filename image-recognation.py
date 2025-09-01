@@ -6,15 +6,19 @@ import matplotlib.pyplot as plt
 # displaying image
 
 # load digits
+# is used to load handwritten-digits dataset into memory
 digits = load_digits()
 
 # pick two images from the dataset
+# select image 1
 img1 = digits.images[0]
+# select second image
 img2 = digits.images[1]
+# select eleven image
 img3 = digits.images[10]
 
 # flatten image into feature vectors (64 pixels)
-
+# convert the 2D array of image into 1D for better mathematical caliculation
 vec1 = img1.flatten()
 vec2 = img2.flatten()
 vec3 = img3.flatten()
