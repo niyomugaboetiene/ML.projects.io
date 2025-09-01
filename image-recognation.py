@@ -24,7 +24,9 @@ print ("Distance between tow 0's: ", dist_same)
 print("Distance between '0' and '5'", dist_diff)
 
 # show the images
-fig, axes = plt.subplot(1, 3, figsize=(6, 2))
-axes[0].imshow(img1, camps='gray'); axes[0].set_title("Digit 0")
-axes[1].imshow(img2, camps='gray'); axes[1].set_title("Digit 1")
-axes[10].imshow(img3, camps="gray"); axes[10].set_title("Digit 5")
+fig, axes = plt.subplots(1, 3, figsize=(6, 2))
+axes[0].imshow(img1, cmap='gray'); axes[0].set_title("Digit 0")
+axes[1].imshow(img2, cmap='gray'); axes[1].set_title("Digit 1")
+axes[2].imshow(img3, cmap="gray"); axes[2].set_title("Digit 5")
+
+plt.show()
