@@ -1,0 +1,36 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Generate datasets
+X = np.arange(0, 10, 1) # from 0 up to 9
+y = 2 * X + 5 + np.random.randn(len(X)) # len(X) is noise
+
+# convert to columns for matrix multiplication
+X = X.reshape(-1, 1) # shape (10, 1)
+y = y.reshape(-1, 1) # shape (10, 1)
+
+# normalize feature
+X_max = np.max(X)
+X_min = np.min(X)
+
+y_max = np.max(y)
+y_min = np.max(y)
+
+y_normalized = (y - y_min) / (y_max - y_min)
+X_normalzied = (X - X_min) / (X_max - X_min)
+
+# initialized parameters
+w = np.array([[0.0]]) # weight
+b = 0.0
+learning_rate = 0.1
+epochs = 1000
+m = X_normalzied.shape[0] # number of samples
+
+# train model gradient descent
+
+for i in range(epochs):
+    y_pred = X_normalzied @ w + b
+
+    # compute gradients
+    dw = (2/m) * (X_normalzied.T @ (y_pred - y_normalized))
+    db = (2/m) * np.sum()
