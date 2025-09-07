@@ -33,4 +33,24 @@ for i in range(epochs):
 
     # compute gradients
     dw = (2/m) * (X_normalzied.T @ (y_pred - y_normalized))
-    db = (2/m) * np.sum()
+    db = (2/m) * np.sum(y_pred - y_normalized)
+
+    # update parameters
+    w -= learning_rate * dw
+    b = learning_rate * db
+
+# Make smooth predictions for ploting
+x_plot = np.linspace(0, 10, 100).reshape(-1, 1)
+x_plot_norm = (x_plot - X_min) / (X_max - X_min)
+y_plot_norm = (x_plot_norm @ w + b)
+
+# denormalize predictions
+y_plot = y_plot_norm * (y_max - y_min) + y_min
+
+plt.scatter(X, y, color='blue', label='Data')
+plt.plot(x_plot, y_plot, color='red', label='Prediction')
+plt.xlabel('Hours Studied')
+plt.ylabel('Exam Score')
+plt.title('Linear Regression from scratch')
+plt.legend()
+plt.show()
