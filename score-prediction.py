@@ -37,6 +37,7 @@ m = X_normalzied.shape[0] # number of samples
 # train model gradient descent
 # this is how the model learns
 for i in range(epochs):
+    # compute predicted values using w and b
     y_pred = X_normalzied @ w + b
 
     # compute gradients
