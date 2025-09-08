@@ -41,16 +41,20 @@ for i in range(epochs):
     y_pred = X_normalzied @ w + b
 
     # compute gradients
+    # tells how much to change w to reduce error
     dw = (2/m) * (X_normalzied.T @ (y_pred - y_normalized))
+    # also tells how much to change b to reduce error
     db = (2/m) * np.sum(y_pred - y_normalized)
 
     # update parameters
     w -= learning_rate * dw
     b = learning_rate * db
 
-# Make smooth predictions for ploting
+# Make smooth predictions for ploting to make prediction smooth
 x_plot = np.linspace(0, 10, 100).reshape(-1, 1)
+# normalize data to make training faster
 x_plot_norm = (x_plot - X_min) / (X_max - X_min)
+# predict output for any inputs
 y_plot_norm = (x_plot_norm @ w + b)
 
 # denormalize predictions
