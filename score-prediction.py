@@ -3,19 +3,25 @@ import matplotlib.pyplot as plt
 
 # Generate datasets
 X = np.arange(0, 10, 1) # from 0 up to 9
+# 2 * X + 5 define linear relationship
+# np.random.randn(len(X)) generate random 10 numbers to each value of X to be useful for testing 
+# 5 make dataset start higher not from 0
 y = 2 * X + 5 + np.random.randn(len(X)) # len(X) is noise
 
 # convert to columns for matrix multiplication
+#  -1 means fugure out correct rows automatically
+# 1 means make only one column means 1D
 X = X.reshape(-1, 1) # shape (10, 1)
 y = y.reshape(-1, 1) # shape (10, 1)
 
-# normalize feature
+# normalize feature to make training daster
 X_max = np.max(X)
 X_min = np.min(X)
 
 y_max = np.max(y)
 y_min = np.max(y)
 
+# make stable gradient descent, equal importance, numerical safety
 y_normalized = (y - y_min) / (y_max - y_min)
 X_normalzied = (X - X_min) / (X_max - X_min)
 
