@@ -54,3 +54,11 @@ plt.ylabel('Exam Score')
 plt.title('Linear Regression from scratch')
 plt.legend()
 plt.show()
+
+
+# predict for new value
+hours = 7
+hours_norm = (hours - X_min) / (X_max - X_min)
+predicted_score_norm = hours_norm * w + b
+predicted_score = predicted_score_norm * (y_max - y_min) + y_min
+print(f"Predicred score from {hours} hours: {predicted_score[0][0]:2.f}")
