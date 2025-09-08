@@ -29,7 +29,9 @@ X_normalzied = (X - X_min) / (X_max - X_min)
 w = np.array([[0.0]]) # weight
 b = 0.0
 learning_rate = 0.1
+# epochs repeat many time for better learning 
 epochs = 1000
+# make gradient update scalable
 m = X_normalzied.shape[0] # number of samples
 
 # train model gradient descent
