@@ -31,11 +31,11 @@ b = 0.0
 learning_rate = 0.1
 # epochs repeat many time for better learning 
 epochs = 1000
-# make gradient update scalable
+# make gradient update scalable it takes the shape of array is used to update weight
 m = X_normalzied.shape[0] # number of samples
 
 # train model gradient descent
-
+# this is how the model learns
 for i in range(epochs):
     y_pred = X_normalzied @ w + b
 
