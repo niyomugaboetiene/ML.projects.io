@@ -21,6 +21,7 @@ img3 = digits.images[10]
 # convert the 2D array of image into 1D for better mathematical caliculation
 vec1 = img1.flatten()
 vec2 = img2.flatten()
+
 vec3 = img3.flatten()
 
 # compute Euclidean distances
