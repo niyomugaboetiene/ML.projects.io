@@ -26,6 +26,13 @@ def predict_home_price():
     bath = int(request.form['bath'])
     bhk = int(request.form['bhk'])
 
+    response = jsonify({
+        'estimated_price': util.get_estimate_price(location, total_sqft, bhk, bath)
+    })
+
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    return response
+
 if __name__ == "__main__":
     print("Flask server started successfully")
     app.run()
