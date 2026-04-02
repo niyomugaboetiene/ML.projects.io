@@ -23,7 +23,7 @@ def get_estimate_price(location, sqft, bhk, bath):
     if loc_index >= 0:
          x[loc_index] = 1
 
-    return __model.predict()
+    return round(__model.predict([x])[0])
 
 def load_saved_artifacts():
     print("Loading saved artifacts start")
