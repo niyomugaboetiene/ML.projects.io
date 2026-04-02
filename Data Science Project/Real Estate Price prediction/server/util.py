@@ -8,6 +8,8 @@ __model = None
 def get_location_names():
    return __location
 
+def get_estimate_price(location, sqft, bhk, bath):
+
 
 def load_saved_artifacts():
     print("Loading saved artifacts start")
