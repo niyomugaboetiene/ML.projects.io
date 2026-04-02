@@ -35,4 +35,5 @@ def predict_home_price():
 
 if __name__ == "__main__":
     print("Flask server started successfully")
+    util.load_saved_artifacts()
     app.run()
