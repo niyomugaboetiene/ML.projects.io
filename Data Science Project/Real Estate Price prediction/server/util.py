@@ -8,6 +8,7 @@ def get_location_names():
 
 
 def load_saved_artifacts():
+    print("Loading saved artifacts")
     
 if __name__ == "__main__":
     print(get_location_names())
