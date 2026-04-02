@@ -1,21 +1,29 @@
 import json
+import pickle
 
 __location = None
 __data_columns = None
 __model = None
 
 def get_location_names():
-   pass
+   return __location
 
 
 def load_saved_artifacts():
-    print("Loading saved artifacts")
+    print("Loading saved artifacts start")
 
     global __data_columns
     global __location 
+
     with open("./artifacts/columns.json", "r") as f:
        __data_columns =  json.load(f)['data_columns']
        __location = __data_columns[3:]
+
+    global __model
+    with open("./artifacts/Real_estate_price_prediction.ipynb", "rb") as f:
+        __model = pickle.load(f)
+
+    print("Loading saved artifacts is done")
 
 if __name__ == "__main__":
     print(get_location_names())
