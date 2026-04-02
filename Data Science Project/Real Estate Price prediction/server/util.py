@@ -15,6 +15,7 @@ def load_saved_artifacts():
     global __location 
     with open("./artifacts/columns.json", "r") as f:
        __data_columns =  json.load(f)['data_columns']
+       __location = __data_columns[3:]
 
 if __name__ == "__main__":
     print(get_location_names())
