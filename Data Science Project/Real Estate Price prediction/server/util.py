@@ -11,7 +11,7 @@ def get_location_names():
 
 def get_estimate_price(location, sqft, bhk, bath):
     try:
-       loc_index = __data_columns.index(location)
+       loc_index = __data_columns.index(location.lower())
     except:
         loc_index = -1
 
