@@ -19,11 +19,12 @@ def load_saved_artifacts():
        __data_columns =  json.load(f)['data_columns']
        __location = __data_columns[3:]
 
-    global __model
-    with open("./artifacts/Real_estate_price_prediction.ipynb", "rb") as f:
+    # global __model
+    with open("./artifacts/Real_estate_price_prediction.pickle", "rb") as f:
         __model = pickle.load(f)
 
     print("Loading saved artifacts is done")
 
 if __name__ == "__main__":
+    load_saved_artifacts()
     print(get_location_names())
