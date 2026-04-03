@@ -28,17 +28,17 @@ const Footer = () => {
                </div>
 
                <div className="flex flex-col text-white">
-                     <span>Find Us</span>
-                     <Link>Events</Link>
-                     <Link>Locations</Link>
-                     <Link>Newsletter</Link>
+                     <span className="text-xl font-bold mb-3">Find Us</span>
+                     <Link className="hover:underline hover:text-md transition duration-500">Events</Link>
+                     <Link className="hover:underline hover:text-md transition duration-500">Locations</Link>
+                     <Link className="hover:underline hover:text-md transition duration-500">Newsletter</Link>
                </div>
 
                <div className="flex flex-col text-white">
-                    <span>Our Social</span>
-                    <Link>Instagram</Link>
-                    <Link>Facebook</Link>
-                    <Link>Twitter</Link>
+                    <span className="text-xl font-bold mb-3">Our Social</span>
+                    <Link className="hover:underline hover:text-md transition duration-500" to="#">Instagram</Link>
+                    <Link className="hover:underline hover:text-md transition duration-500">Facebook</Link>
+                    <Link className="hover:underline hover:text-md transition duration-500">Twitter</Link>
                </div>
              </div>
           </div>
