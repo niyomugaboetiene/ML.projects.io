@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 const IndexComponent = () => {
     const [location, setLocation] = useState(null);
+    const [predicted_result, setResult] = useState("");
     const [sqft, setSqft] = useState(0);
     const [bhk, setBhk] = useState(0);
     const [bath, setBath] = useState(0);
@@ -28,12 +29,11 @@ const IndexComponent = () => {
             const res = await axios.post('http://127.0.0.1:5000/predict_home_price', {
                 location, sqft, bhk, bath
             });
-
-            if (res.ok) {
-
-            }
+          
+            setResult(res.data.estimated_price);
+            
         } catch (err){
-
+           console.error(err);
         }
     }
 
@@ -65,6 +65,8 @@ const IndexComponent = () => {
                         ))}
                     </select>
                 </div>
+
+                <button onClick={HandlePredict}>Get Price</button>
             </div>
         </div>
     )
