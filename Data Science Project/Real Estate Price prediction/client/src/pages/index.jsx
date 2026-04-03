@@ -74,7 +74,11 @@ const IndexComponent = () => {
 
                 <button onClick={HandlePredict} className="w-full mt-3 bg-emerald-500 py-2 rounded-lg text-white font-bold hover:bg-emerald-600 transition-colors">Get Price</button>
 
-                <h2>{predicted_result}</h2>
+               {predicted_result && (
+                <>
+                   <h2 className="mt-5 text-center text-lg text-gray-700">Price is: <span className="font-bold">{predicted_result} INR</span></h2>                  
+                </>
+               )}
             </div>
         </div>
     )
