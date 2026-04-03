@@ -39,11 +39,11 @@ const IndexComponent = () => {
 
 
     return (
-        <div className="flex bg-emerald-50 justify-center items-center h-screen p-6">
-            <div className="bg-emerald-300">
-                 <h1>House Details</h1>
-                <div>
-                    <label htmlFor="">BHK (Bathroom | Hall | Kitchen)</label>
+        <div className="flex bg-emerald-50 justify-center items-center h-screen">
+            <div className="bg-emerald-300 p-6 rounded-lg shadow-xl w-1/4">
+                 <h1 className="text-center text-xl text-gray-700 font-bold">House Details</h1>
+                <div className="pt-2">
+                    <label htmlFor="" className="block text-gray-700 text-lg">BHK (Bathroom | Hall | Kitchen)</label>
                     <input type="number"  onChange={(e) => setBhk(e.target.value)} />
                 </div>
               
