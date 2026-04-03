@@ -42,37 +42,37 @@ const IndexComponent = () => {
         <div className="flex bg-emerald-50 justify-center items-center h-screen">
             <div className="bg-emerald-300 p-6 rounded-lg shadow-xl w-1/4">
                  <h1 className="text-center text-xl text-gray-700 font-bold">House Details</h1>
-                <div className="pt-2">
+                <div className="mt-2">
                     <label htmlFor="" className="block text-gray-700 text-lg">BHK (Bathroom | Hall | Kitchen)</label>
-                    <input type="number"  onChange={(e) => setBhk(e.target.value)} 
+                    <input type="number"  onChange={(e) => setBhk(e.target.value)}  required
                        className="border w-full py-2 rounded-lg border-gray-700 px-2"
                     />
                 </div>
               
-                <div className="pt-2">
+                <div className="mt-2">
                     <label htmlFor="" className="block text-gray-700 text-lg">Bathroom</label>
-                    <input type="number"  onChange={(e) => setBath(e.target.value)}
+                    <input type="number"  onChange={(e) => setBath(e.target.value)} required
                         className="border w-full py-2 rounded-lg border-gray-700 px-2"
                     />
                 </div>
                 
-                <div className="pt-2">
+                <div className="mt-2">
                     <label htmlFor="" className="block text-gray-700 text-lg">Square feet</label>
-                    <input type="number"  onChange={(e) => setTotal_Sqft(e.target.value)} 
+                    <input type="number"  onChange={(e) => setTotal_Sqft(e.target.value)}  required
                         className="border w-full py-2 rounded-lg border-gray-700 px-2"
                     />
                 </div>
                 
-                <div className="pt-2">
-                    <label htmlFor="">Location</label>
-                    <select >
+                <div className="mt-2">
+                    <label htmlFor="" className="block text-gray-700 text-lg">Location</label>
+                    <select className="border w-full py-2 rounded-lg border-gray-700" required>
                         {location?.map((loc, idx) => (
                              <option value={`${loc}`} key={idx}>{loc}</option>
                         ))}
                     </select>
                 </div>
 
-                <button onClick={HandlePredict}>Get Price</button>
+                <button onClick={HandlePredict} className="w-full mt-3">Get Price</button>
 
                 <h2>{predicted_result}</h2>
             </div>
