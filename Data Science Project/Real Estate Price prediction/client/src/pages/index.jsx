@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 const IndexComponent = () => {
     const [location, setLocation] = useState(null);
     const [predicted_result, setResult] = useState("");
-    const [sqft, setSqft] = useState(0);
+    const [total_sqft, setTotal_Sqft] = useState(0);
     const [bhk, setBhk] = useState(0);
     const [bath, setBath] = useState(0);
 
@@ -24,10 +24,10 @@ const IndexComponent = () => {
     }, []);
 
 
-    const HandlePredict = async() => {
+    const HandlePredict = async () => {
         try {
             const res = await axios.post('http://127.0.0.1:5000/predict_home_price', {
-                location, sqft, bhk, bath
+                location, total_sqft, bhk, bath
             });
           
             setResult(res.data.estimated_price);
@@ -39,8 +39,8 @@ const IndexComponent = () => {
 
 
     return (
-        <div>
-            <div>
+        <div className="flex bg-emerald-50 justify-center items-center h-screen p-6">
+            <div className="bg-emerald-300">
                  <h1>House Details</h1>
                 <div>
                     <label htmlFor="">BHK (Bathroom | Hall | Kitchen)</label>
@@ -54,7 +54,7 @@ const IndexComponent = () => {
                 
                 <div>
                     <label htmlFor="">Square feet</label>
-                    <input type="number"  onChange={(e) => setSqft(e.target.value)} />
+                    <input type="number"  onChange={(e) => setTotal_Sqft(e.target.value)} />
                 </div>
                 
                 <div>
@@ -67,6 +67,8 @@ const IndexComponent = () => {
                 </div>
 
                 <button onClick={HandlePredict}>Get Price</button>
+
+                <h2>{predicted_result}</h2>
             </div>
         </div>
     )
