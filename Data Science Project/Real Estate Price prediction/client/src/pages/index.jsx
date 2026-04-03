@@ -44,7 +44,9 @@ const IndexComponent = () => {
                  <h1 className="text-center text-xl text-gray-700 font-bold">House Details</h1>
                 <div className="pt-2">
                     <label htmlFor="" className="block text-gray-700 text-lg">BHK (Bathroom | Hall | Kitchen)</label>
-                    <input type="number"  onChange={(e) => setBhk(e.target.value)} />
+                    <input type="number"  onChange={(e) => setBhk(e.target.value)} 
+                       className="border w-full py-2 rounded-lg border-gray-700"
+                    />
                 </div>
               
                 <div>
