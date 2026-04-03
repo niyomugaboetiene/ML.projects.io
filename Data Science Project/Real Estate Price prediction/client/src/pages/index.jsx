@@ -14,12 +14,28 @@ const IndexComponent = () => {
                    setLocation(res.data.locations);
                 //    console.log("Locations", res.data.locations);
                } catch (err) {
-
+                   console.error(err);
+                   process.exit(1);
                }
         }
 
         GetLocationNames();
     }, []);
+
+
+    const HandlePredict = async() => {
+        try {
+            const res = await axios.post('http://127.0.0.1:5000/predict_home_price', {
+                location, sqft, bhk, bath
+            });
+
+            if (res.ok) {
+
+            }
+        } catch (err){
+
+        }
+    }
 
 
     return (
