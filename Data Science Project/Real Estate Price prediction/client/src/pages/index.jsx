@@ -72,7 +72,7 @@ const IndexComponent = () => {
                     </select>
                 </div>
 
-                <button onClick={HandlePredict} className="w-full mt-3">Get Price</button>
+                <button onClick={HandlePredict} className="w-full mt-3 bg-emerald-500 py-2 rounded-lg text-white font-bold hover:bg-emerald-600 transition-colors">Get Price</button>
 
                 <h2>{predicted_result}</h2>
             </div>
