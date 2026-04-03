@@ -25,7 +25,7 @@ const HomeComponent = () => {
                 <div className="w-130 p-4 relative">
                     <h1 className="text-[30px] absolute top-70 left-20 font-bold text-orange-500 font-serif">Predict Best Price Of Dream House</h1>
 
-                  <p className="text-[20px] absolute top-95 left-20 text-orange-400 font-serif">Explore our smart house price prediction system that helps you estimate property values based on location, size, and features. Make better decisions with data-driven insights.</p>
+                  <p className="text-[20px] absolute top-95 left-20 text-orange-400 font-serif">Your <span className="font-bold">AI</span> tool to explore our smart house price prediction system that helps you estimate property values based on location, size, and features. Make better decisions with data-driven insights.</p>
                 </div>
 
                 <img src={house} alt="House" title="House" className="w-250 rounded-full relative -right-90 top-30"/>
