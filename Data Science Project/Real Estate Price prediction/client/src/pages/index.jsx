@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
+
 const InputField = ({ label, sublabel, onChange, icon }) => (
   <div className="mb-5">
     <div className="flex justify-between items-baseline mb-1.5">
@@ -74,7 +75,7 @@ const IndexComponent = () => {
         <div className="absolute top-0 left-[10%] right-[10%] h-px bg-linear-to-r from-transparent via-amber-700 to-transparent" />
 
         <div className="text-center mb-8">
-          <p className="text-xs tracking-[0.2em] font-mono uppercase text-amber-700 mb-2">Bengalulu Real Estate Valuation</p>
+          <p className="text-xs tracking-[0.2em] font-mono uppercase text-amber-700 mb-2">Bengaluru Real Estate Valuation</p>
           <h1 className="text-xl text-stone-200 font-normal tracking-wide">Price Estimator</h1>
           <div className="w-8 h-px bg-stone-700 mx-auto mt-3" />
         </div>
