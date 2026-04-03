@@ -49,19 +49,23 @@ const IndexComponent = () => {
                     />
                 </div>
               
-                <div>
-                    <label htmlFor="">Bathroom</label>
-                    <input type="number"  onChange={(e) => setBath(e.target.value)} />
+                <div className="pt-2">
+                    <label htmlFor="" className="block text-gray-700 text-lg">Bathroom</label>
+                    <input type="number"  onChange={(e) => setBath(e.target.value)}
+                        className="border w-full py-2 rounded-lg border-gray-700"
+                    />
                 </div>
                 
-                <div>
-                    <label htmlFor="">Square feet</label>
-                    <input type="number"  onChange={(e) => setTotal_Sqft(e.target.value)} />
+                <div className="pt-2">
+                    <label htmlFor="" className="block text-gray-700 text-lg">Square feet</label>
+                    <input type="number"  onChange={(e) => setTotal_Sqft(e.target.value)} 
+                        className="border w-full py-2 rounded-lg border-gray-700"
+                    />
                 </div>
                 
                 <div>
                     <label htmlFor="">Location</label>
-                    <select name="" id="">
+                    <select name="" onChange={(e) => setLocation(e.target.value)}>
                         {location?.map((loc, idx) => (
                              <option value={`${loc}`} key={idx}>{loc}</option>
                         ))}
