@@ -1,4 +1,4 @@
-import 
+import { FontAwesomeIcon } from "@fontawesome/react-fontawesome";
 
 export default function  Service () {
      return (
@@ -11,11 +11,17 @@ export default function  Service () {
             <div>
                 
                 <div>
+                    <div>
+                        <FontAwesomeIcon icon={byPrefixAndName.fas['location-dot']} />
+                    </div>
                     <h3>Expert Guidance</h3>
                     <p>Benefit from our team's seasoned expertice for a smooth home price experience</p>
                 </div>
 
                 <div>
+                    <div>
+                        <FontAwesomeIcon icon={byPrefixAndName.fas['user-pen']} />
+                    </div>
                     <h3>Personalized Service</h3>
                     <p>Our service adapt to your unique needs, making your journey stress-free</p>
                 </div>
