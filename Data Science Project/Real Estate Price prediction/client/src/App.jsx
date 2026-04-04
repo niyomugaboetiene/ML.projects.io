@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './pages/layout';
 import Service from './pages/Service';
 import HomeComponent from './pages/Home';
+import About from './pages/About';
 
 function App() {
 
@@ -17,12 +18,15 @@ function App() {
            <section>
                <IndexComponent />
            </section>
+
+           <section>
+            <Service />
+           </section>
+
+           <section>
+            <About />
+           </section>
        </Layout>
-
-      <Routes>
-               <Route path='/service' element={ <Service />} />
-
-      </Routes>
     </BrowserRouter>
 
   )

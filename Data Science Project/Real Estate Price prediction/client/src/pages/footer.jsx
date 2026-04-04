@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <div className="bg-linear-to-br from-stone-950 via-stone-950 to-stone-900">
-             <div className="w-425 flex ms-25 rounded-xl bg-white/20 backdrop-blur-md shadow-lg">
+             <div className="w-350 flex ms-65 rounded-xl bg-white/20 backdrop-blur-md shadow-lg">
                <div className="w-75 p-4">
                 <img src={Logo} className="w-100" alt="Logo" />
                 <p className="text-amber-700 font-serif text-lg text-center -mt-3">Our AI app help you for descion making, one click at time</p>
@@ -53,11 +53,10 @@ const Footer = () => {
                     </a>
                </div>
              </div>
-
-
-          <div className="absolute top-65 left-150">
-          <p className="text-lg text-stone-950 font-serif">  &copy; Predictor. Build with ❤️ and ☕ by <a href="https://github.com/niyomugaboetiene" rel="noopener noreferrer" target="_blank" className="text-amber-800 underline font-bold">Etiene Niyomugabo</a></p> 
           </div>
+      
+         <div className="mt-3">
+          <p className="text-lg text-center text-gray-200 font-serif">  &copy; Predictor. Build with ❤️ and ☕ by <a href="https://github.com/niyomugaboetiene" rel="noopener noreferrer" target="_blank" className="text-amber-800 underline font-bold">Etiene Niyomugabo</a></p> 
           </div>
 
         </div>

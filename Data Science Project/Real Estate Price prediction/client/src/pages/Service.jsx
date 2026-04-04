@@ -5,13 +5,13 @@ import {  faLocationDot, faUserPen, faEye, faHandshake } from "@fortawesome/free
 export default function  Service () {
      return (
         <div className="min-h-screen bg-stone-950 text-white p-2 flex justify-center items-center">
-             <div className="absolute -bottom-400 w-120">
+             <div className="absolute -bottom-340 w-120">
                 <h1 className="text-xl text-center font-serif text-amber-700 font-bold">Why Choose Us</h1>
                  <p className="font-serif text-lg text-amber-800">Evaluating your home price with expertice, integrity, transparent <span className="ms-25"> and unmatched personalized service</span></p>
              </div>
 
             <div className="flex p-3 flex-row w-300 space-x-3">
-                <div className="bg-amber-700 p-3 rounded-lg">
+                <div className="bg-amber-700 p-3 rounded-lg hover:scale-105 transition duration-200 shadow-2xl hover:shadow-amber-300">
                     <div className="bg-amber-500 p-3 w-1/3 text-center rounded-lg ">
                         <FontAwesomeIcon icon={faLocationDot} className="text-[40px] text-stone-950" />
                     </div>
@@ -19,7 +19,7 @@ export default function  Service () {
                     <p className="text-stone-950 font-serif">Benefit from our team's seasoned expertice for a smooth home price experience</p>
                 </div>
 
-                <div className="bg-amber-700 p-3 rounded-lg">
+                <div className="bg-amber-700 p-3 rounded-lg hover:scale-105 transition duration-200 shadow-2xl hover:shadow-amber-300">
                     <div className="bg-amber-500 p-3 w-1/3 text-center rounded-lg">
                         <FontAwesomeIcon icon={faUserPen} className="text-[40px] text-stone-950"/>
                     </div>
@@ -27,7 +27,7 @@ export default function  Service () {
                     <p className="text-stone-950 font-serif">Our service adapt to your unique needs, making your journey stress-free</p>
                 </div>
  
-               <div className="bg-amber-700 p-3 rounded-lg">
+               <div className="bg-amber-700 p-3 rounded-lg hover:scale-105 transition duration-200 shadow-2xl hover:shadow-amber-300">
                 <div className="bg-amber-500 p-3 w-1/3 text-center rounded-lg">
                     <FontAwesomeIcon icon={faEye} className="text-[40px] text-stone-950" />
                 </div>
@@ -35,7 +35,7 @@ export default function  Service () {
                   <p className="text-stone-950 font-serif">Stay informed with our clear and honest approach to buying your home</p>
                </div>
 
-                <div className="bg-amber-700 p-3 rounded-lg">
+                <div className="bg-amber-700 p-3 rounded-lg hover:scale-105 transition duration-200 shadow-2xl hover:shadow-amber-300">
                     <div className="bg-amber-500 p-3 w-1/3 text-center rounded-lg">
                        <FontAwesomeIcon icon={faHandshake} className="text-[40px] text-stone-950"/>
                     </div>
