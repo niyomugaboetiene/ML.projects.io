@@ -12,10 +12,10 @@ export default function  Service () {
 
             <div className="flex p-3 flex-row w-400 space-x-3">
                 <div className="bg-amber-700 p-3">
-                    <div>
-                        <FontAwesomeIcon icon={faLocationDot} />
+                    <div className="bg-amber-500 p-3 w-1/5 text-center rounded-lg">
+                        <FontAwesomeIcon icon={faLocationDot} className="text-[40px] text-stone-950"/>
                     </div>
-                    <h3>Expert Guidance</h3>
+                    <h3 className="font-serif font-bold text-stone-950 text-lg">Expert Guidance</h3>
                     <p>Benefit from our team's seasoned expertice for a smooth home price experience</p>
                 </div>
 
