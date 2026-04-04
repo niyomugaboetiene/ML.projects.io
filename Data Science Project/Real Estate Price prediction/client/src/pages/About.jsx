@@ -6,14 +6,14 @@ function About() {
     <div className="min-h-screen bg-stone-950 text-white px-6 py-16">
 
       <div className="text-center mb-16">
-        <h1 className="text-4xl font-bold text-orange-500">About Our App</h1>
-        <p className="mt-4 text-gray-400 max-w-xl mx-auto">
+        <h1 className="text-4xl font-bold font-serif text-orange-500">About Our App</h1>
+        <p className="mt-4 text-gray-400  font-serif  text-lg max-w-xl mx-auto">
           Discover how our intelligent system helps you estimate house prices with accuracy and confidence.
         </p>
       </div>
 
       <div className="max-w-5xl mx-auto mb-20 text-center">
-        <h2 className="text-2xl font-semibold mb-4 text-orange-400">What We Do</h2>
+        <h2 className="text-2xl font-semibold mb-4 font-serif text-orange-400">What We Do</h2>
         <p className="text-gray-300">
           Our machine learning-based platform predicts house prices using key features like location,
           square footage, number of rooms, and bathrooms. It helps buyers, sellers, and investors make
