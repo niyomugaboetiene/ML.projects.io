@@ -32,7 +32,13 @@ const HomeComponent = () => {
                 </nav>
 
              <div>
-                <button className="font-serif relative right-5 top-7 bg-amber-600 px-6 py-2 text-white  rounded-lg hover:bg-amber-700 transition-colors">Contact</button>
+                <a 
+                   className="font-serif relative right-5 top-7 bg-amber-600 px-6 py-2 text-white  rounded-lg hover:bg-amber-700 transition-colors"
+                   href="https://niyomugaboetiene.vercel.app/#contact" rel="noopener noreferrer" target="_blank"
+
+                >
+                    Contact
+                </a>
 
              </div>
             </div>
