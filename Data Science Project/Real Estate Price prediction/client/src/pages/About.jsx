@@ -64,7 +64,6 @@ function About() {
         </p>
       </div>
 
-      {/* CTA */}
       <div className="text-center">
         <h2 className="text-xl mb-4">Ready to explore?</h2>
         <button className="bg-orange-500 px-6 py-2 rounded-lg hover:bg-orange-600 transition">
