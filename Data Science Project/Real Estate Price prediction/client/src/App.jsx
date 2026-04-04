@@ -11,19 +11,19 @@ function App() {
   return (
     <BrowserRouter>
         <Layout>
-             <section>
+             <section id='home'>
                 <HomeComponent />
             </section>
     
-           <section>
+           <section id='index'>
                <IndexComponent />
            </section>
 
-           <section>
+           <section id='service'>
             <Service />
            </section>
 
-           <section>
+           <section id='about'>
             <About />
            </section>
        </Layout>

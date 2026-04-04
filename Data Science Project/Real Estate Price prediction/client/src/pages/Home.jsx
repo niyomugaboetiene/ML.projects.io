@@ -11,9 +11,24 @@ const HomeComponent = () => {
             <div className="fixed top-0 right-0 left-0 bg-stone-950  flex p-3 justify-between shadow-lg  border-b border-orange-600 z-50">
                 <img src={vector} alt="Logo" className="w-25 relative left-4 hover:scale-150 transition duration-200" title="Logo"/>
                 <nav className="justify-between space-x-24 flex text-amber-700 font-serif items-center text-[18px]">
-                   <Link className="hover:text-amber-800 transition-colors">Home</Link>
-                   <Link className="hover:text-amber-800 transition-colors">Service</Link>
-                   <Link className="hover:text-amber-800 transition-colors">About</Link>
+                   <button 
+                      className="hover:text-amber-800 transition-colors" 
+                      onClick={() => document.getElementById("home").scrollIntoView({ behavior: "smooth" })}
+                   >
+                      Home
+                  </button>
+                   <button 
+                      className="hover:text-amber-800 transition-colors"
+                      onClick={() => document.getElementById("service").scrollIntoView({ behavior: "smooth" })}
+                   >
+                    Service
+                  </button>
+                   <button 
+                      onClick={() => document.getElementById("about").scrollIntoView({ behavior: 'smooth' })}
+                      className="hover:text-amber-800 transition-colors"
+                    >
+                        About
+                  </button>
                 </nav>
 
              <div>
@@ -31,7 +46,8 @@ const HomeComponent = () => {
                 
                 <div className="text-center absolute top-120 left-17">
                          <h2 className="text-xl mb-4">Ready to explore?</h2>
-                        <button onClick={() => navigate("/index")} className="bg-orange-500 px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors font-serif text-white">
+                        <button onClick={() => document.getElementById("index").scrollIntoView({ behavior: "smooth" })}
+                        className="bg-orange-500 px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors font-serif text-white">
                           Try Prediction
                          </button>
                        </div>

@@ -41,7 +41,7 @@ const Footer = () => {
                           <path d="M7.75 2C4.678 2 2 4.678 2 7.75v8.5C2 19.322 4.678 22 7.75 22h8.5C19.322 22 22 19.322 22 16.25v-8.5C22 4.678 19.322 2 16.25 2h-8.5zm0 2h8.5C18.216 4 20 5.784 20 7.75v8.5c0 1.966-1.784 3.75-3.75 3.75h-8.5C5.784 20 4 18.216 4 16.25v-8.5C4 5.784 5.784 4 7.75 4zm9.25 1.5a.75.75 0 100 1.5.75.75 0 000-1.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"/>
                     </svg> <span></span>
                     </a>
-                    <a className="hover:underline hover:text-md transition duration-500" href="https://x.com/Niyomugabo_250" rel="noopener noreferrer" target="_blank">
+                    <a className="hover:underline hover:text-md transition duration-500 text-stone-700" href="https://x.com/Niyomugabo_250" rel="noopener noreferrer" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M18.244 2H21l-6.51 7.44L22 22h-6.828l-5.35-6.98L3.9 22H1l6.97-7.97L2 2h6.828l4.86 6.37L18.244 2zm-2.394 18h1.885L8.19 4H6.2l9.65 16z"/>
                     </svg> 
