@@ -10,8 +10,8 @@ export default function  Service () {
                  <p className="font-serif text-lg text-amber-800">Evaluating your home price with expertice, integrity, transparent <span className="ms-25"> and unmatched personalized service</span></p>
              </div>
 
-            <div className="flex flex-row w-300">
-                <div className="">
+            <div className="flex p-3 flex-row w-400 space-x-3">
+                <div className="bg-amber-700 p-3">
                     <div>
                         <FontAwesomeIcon icon={faLocationDot} />
                     </div>
