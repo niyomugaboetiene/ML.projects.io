@@ -1,18 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {  faLocationDot, faUserPen, faEye, faHandshake } from "@fortawesome/free-solid-svg-icons"
+
 
 export default function  Service () {
      return (
-        <div className="min-h-screen bg-stone-950 text-white p-2">
-             <div>
-                <h1>WHy Choose Us</h1>
-                 <p>Evaluating your home price with expertice, integrity, transparent and unmatched personalized service</p>
+        <div className="min-h-screen bg-stone-950 text-white p-2 flex justify-center items-center">
+             <div className="absolute -bottom-400 w-120">
+                <h1 className="text-xl text-center font-serif text-amber-700 font-bold">Why Choose Us</h1>
+                 <p className="font-serif text-lg text-amber-800">Evaluating your home price with expertice, integrity, transparent <span className="ms-25"> and unmatched personalized service</span></p>
              </div>
 
-            <div>
-                
-                <div>
+            <div className="flex flex-row w-300">
+                <div className="">
                     <div>
-                        <FontAwesomeIcon icon={byPrefixAndName.fas['location-dot']} />
+                        <FontAwesomeIcon icon={faLocationDot} />
                     </div>
                     <h3>Expert Guidance</h3>
                     <p>Benefit from our team's seasoned expertice for a smooth home price experience</p>
@@ -20,18 +21,24 @@ export default function  Service () {
 
                 <div>
                     <div>
-                        <FontAwesomeIcon icon={byPrefixAndName.fas['user-pen']} />
+                        <FontAwesomeIcon icon={faUserPen} />
                     </div>
                     <h3>Personalized Service</h3>
                     <p>Our service adapt to your unique needs, making your journey stress-free</p>
                 </div>
  
                <div>
+                <div>
+                    <FontAwesomeIcon icon={faEye}/>
+                </div>
                    <h3>Transparent Process</h3>
                   <p>Stay informed with our clear and honest approach to buying your home</p>
                </div>
 
                 <div>
+                    <div>
+                       <FontAwesomeIcon icon={faHandshake}/>
+                    </div>
                     <h3>Exceptional Support</h3>
                     <p>Providing peace of mind with our responsive and attentive customer service</p>
                 </div>
