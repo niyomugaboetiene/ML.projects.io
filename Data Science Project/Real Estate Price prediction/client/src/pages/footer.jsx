@@ -53,7 +53,13 @@ const Footer = () => {
                     </a>
                </div>
              </div>
+
+
+          <div className="absolute top-65 left-150">
+          <p className="text-lg text-stone-950 font-serif">  &copy; Predictor. Build with ❤️ and ☕ by <a href="https://github.com/niyomugaboetiene" rel="noopener noreferrer" target="_blank" className="text-amber-800 underline font-bold">Etiene Niyomugabo</a></p> 
           </div>
+          </div>
+
         </div>
     )
 }
