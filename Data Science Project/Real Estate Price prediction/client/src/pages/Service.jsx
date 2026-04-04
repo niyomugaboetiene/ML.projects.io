@@ -56,6 +56,13 @@ export default function Service() {
 
       </div>
 
+      <div className="mt-12 text-center max-w-3xl mx-auto">
+        <p className="text-xl text-gray-400 font-serif font-semibold">
+          Join thousands of satisfied users who trust our AI-powered home price predictor. 
+          Make smarter property decisions today and unlock the full potential of your investment!
+        </p>
+      </div>
+
     </div>
   );
 }
