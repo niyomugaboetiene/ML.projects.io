@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import vector from "../assets/vector.png";
+import { useNavigate } from "react-router-dom";
 import house from "../assets/house.jpg";
 
 const HomeComponent = () => {
+    const navigate = useNavigate();
 
     return (
         <div className="bg-stone-950 h-screen">
@@ -27,9 +29,10 @@ const HomeComponent = () => {
 
                   <p className="text-[20px] absolute top-95 left-20 text-orange-400 font-serif">Your <span className="font-bold">AI</span> tool to explore our smart house price prediction system that helps you estimate property values based on location, size, and features. Make better decisions with data-driven insights.</p>
                     
-                        <div className="text-center">
+                
+                <div className="text-center absolute top-120 left-17">
                          <h2 className="text-xl mb-4">Ready to explore?</h2>
-                        <button className="bg-orange-500 px-6 py-2 rounded-lg hover:bg-orange-600 transition">
+                        <button onClick={() => navigate("/index")} className="bg-orange-500 px-6 py-2 rounded-lg hover:bg-orange-600 transition">
                           Try Prediction
                          </button>
                        </div>
