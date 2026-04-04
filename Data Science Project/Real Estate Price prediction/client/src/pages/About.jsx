@@ -14,7 +14,7 @@ function About() {
 
       <div className="max-w-5xl mx-auto mb-20 text-center">
         <h2 className="text-2xl font-semibold mb-4 font-serif text-orange-400">What We Do</h2>
-        <p className="text-gray-300">
+        <p className="text-gray-300 font-serif text-lg">
           Our machine learning-based platform predicts house prices using key features like location,
           square footage, number of rooms, and bathrooms. It helps buyers, sellers, and investors make
           smarter real estate decisions.
@@ -23,26 +23,26 @@ function About() {
 
       <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto mb-20">
 
-        <div className="bg-stone-900 p-6 rounded-xl shadow-lg text-center hover:scale-105 transition">
+        <div className="bg-stone-900 p-6 rounded-xl shadow-2xl text-center hover:scale-105 hover:shadow-amber-700 transition duration-300">
           <FontAwesomeIcon icon={faChartLine} className="text-orange-500 text-3xl mb-4" />
-          <h3 className="text-xl font-semibold mb-2">Accurate Prediction</h3>
-          <p className="text-gray-400">
+          <h3 className="text-xl font-semibold mb-2 font-serif">Accurate Prediction</h3>
+          <p className="text-gray-400 font-serif">
             Uses trained machine learning models to estimate property prices based on real data.
           </p>
         </div>
 
-        <div className="bg-stone-900 p-6 rounded-xl shadow-lg text-center hover:scale-105 transition">
+        <div className="bg-stone-900 p-6 rounded-xl shadow-2xl text-center hover:scale-105 hover:shadow-amber-700 transition duration-300">
           <FontAwesomeIcon icon={faEye} className="text-orange-500 text-3xl mb-4" />
-          <h3 className="text-xl font-semibold mb-2">Transparent Process</h3>
-          <p className="text-gray-400">
+          <h3 className="text-xl font-semibold mb-2 font-serif">Transparent Process</h3>
+          <p className="text-gray-400 font-serif">
             Every prediction is based on visible input values — no hidden logic, just smart calculations.
           </p>
         </div>
 
-        <div className="bg-stone-900 p-6 rounded-xl shadow-lg text-center hover:scale-105 transition">
+        <div className="bg-stone-900 p-6 rounded-xl shadow-2xl text-center hover:scale-105 hover:shadow-amber-700 transition duration-300">
           <FontAwesomeIcon icon={faListCheck} className="text-orange-500 text-3xl mb-4" />
-          <h3 className="text-xl font-semibold mb-2">Simple & Fast</h3>
-          <p className="text-gray-400">
+          <h3 className="text-xl font-semibold mb-2 font-serif">Simple & Fast</h3>
+          <p className="text-gray-400 font-serif">
             Enter your details and get results instantly with a smooth and user-friendly interface.
           </p>
         </div>
@@ -50,16 +50,16 @@ function About() {
       </div>
 
       <div className="max-w-4xl mx-auto text-center mb-20">
-        <h2 className="text-2xl font-semibold text-orange-400 mb-4">How It Works</h2>
-        <p className="text-gray-300">
+        <h2 className="text-2xl font-semibold text-orange-400 mb-4 font-serif">How It Works</h2>
+        <p className="text-gray-300 font-serif text-lg">
           Our system uses a trained Linear Regression model that analyzes patterns in housing data.
           When you enter your inputs, the model processes them and predicts a price based on learned relationships.
         </p>
       </div>
 
       <div className="text-center">
-        <h2 className="text-xl mb-4">Ready to explore?</h2>
-        <button className="bg-orange-500 px-6 py-2 rounded-lg hover:bg-orange-600 transition">
+        <h2 className="text-xl mb-4 font-serif">Ready to explore?</h2>
+        <button className="bg-orange-500 px-6 py-2 font-serif rounded-lg hover:bg-orange-600 transition">
           Try Prediction
         </button>
       </div>

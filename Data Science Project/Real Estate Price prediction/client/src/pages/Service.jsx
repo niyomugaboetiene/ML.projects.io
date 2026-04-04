@@ -16,40 +16,40 @@ export default function Service() {
         
         <div className="bg-stone-900 p-6 rounded-xl shadow-2xl hover:scale-105 transition duration-300 hover:shadow-amber-700">
           <div className="bg-stone-950 w-16 h-16 flex items-center justify-center rounded-full mb-4 mx-auto">
-            <FontAwesomeIcon icon={faLocationDot} className="text-white text-2xl" />
+            <FontAwesomeIcon icon={faLocationDot} className="text-gray-400 text-2xl" />
           </div>
           <h3 className="text-center font-bold text-white text-lg mb-2">Expert Guidance</h3>
-          <p className="text-center text-white font-serif text-md">
+          <p className="text-center text-gray-400 font-serif text-md">
             Benefit from our team's seasoned expertise for a smooth home price experience.
           </p>
         </div>
 
         <div className="bg-stone-900 p-6 rounded-xl shadow-2xl hover:scale-105 transition duration-300 hover:shadow-amber-700">
           <div className="bg-stone-950 w-16 h-16 flex items-center justify-center rounded-full mb-4 mx-auto">
-            <FontAwesomeIcon icon={faUserPen} className="text-white text-2xl" />
+            <FontAwesomeIcon icon={faUserPen} className="text-gray-400 text-2xl" />
           </div>
           <h3 className="text-center font-bold text-white text-lg mb-2">Personalized Service</h3>
-          <p className="text-center text-white font-serif ">
+          <p className="text-center text-gray-400 font-serif ">
             Our service adapts to your unique needs, making your journey stress-free.
           </p>
         </div>
 
         <div className="bg-stone-900 p-6 rounded-xl shadow-2xl hover:scale-105 transition duration-300 hover:shadow-amber-700">
           <div className="bg-stone-950 w-16 h-16 flex items-center justify-center rounded-full mb-4 mx-auto">
-            <FontAwesomeIcon icon={faEye} className="text-white text-2xl" />
+            <FontAwesomeIcon icon={faEye} className="text-gray-400 text-2xl" />
           </div>
           <h3 className="text-center font-bold text-white text-lg mb-2">Transparent Process</h3>
-          <p className="text-center text-white font-serif text-md">
+          <p className="text-center text-gray-400 font-serif text-md">
             Stay informed with our clear and honest approach to buying your home.
           </p>
         </div>
 
         <div className="bg-stone-900 p-6 rounded-xl shadow-2xl hover:scale-105 transition duration-300 hover:shadow-amber-700">
           <div className="bg-stone-950 w-16 h-16 flex items-center justify-center rounded-full mb-4 mx-auto">
-            <FontAwesomeIcon icon={faHandshake} className="text-white text-2xl" />
+            <FontAwesomeIcon icon={faHandshake} className="text-gray-400 text-2xl" />
           </div>
           <h3 className="text-center font-bold text-white text-lg mb-2">Exceptional Support</h3>
-          <p className="text-center text-white font-serif text-sm">
+          <p className="text-center text-gray-400 font-serif text-sm">
             Providing peace of mind with our responsive and attentive customer service.
           </p>
         </div>

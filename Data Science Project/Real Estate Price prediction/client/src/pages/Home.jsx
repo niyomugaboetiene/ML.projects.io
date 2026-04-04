@@ -14,11 +14,10 @@ const HomeComponent = () => {
                    <Link className="hover:text-amber-800 transition-colors">Home</Link>
                    <Link className="hover:text-amber-800 transition-colors">Service</Link>
                    <Link className="hover:text-amber-800 transition-colors">About</Link>
-                   <Link className="hover:text-amber-800 transition-colors">Contact</Link>
                 </nav>
 
              <div>
-                <button className="text-stone-800 relative right-5 top-7 bg-amber-600 px-6 py-2 rounded-lg hover:bg-amber-700 transition-colors">Sign Up</button>
+                <button className="font-serif relative right-5 top-7 bg-amber-600 px-6 py-2 text-white  rounded-lg hover:bg-amber-700 transition-colors">Contact</button>
 
              </div>
             </div>
@@ -32,7 +31,7 @@ const HomeComponent = () => {
                 
                 <div className="text-center absolute top-120 left-17">
                          <h2 className="text-xl mb-4">Ready to explore?</h2>
-                        <button onClick={() => navigate("/index")} className="bg-orange-500 px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors font-serif">
+                        <button onClick={() => navigate("/index")} className="bg-orange-500 px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors font-serif text-white">
                           Try Prediction
                          </button>
                        </div>
