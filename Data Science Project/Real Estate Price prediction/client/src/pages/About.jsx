@@ -59,7 +59,10 @@ function About() {
 
       <div className="text-center">
         <h2 className="text-xl mb-4 font-serif">Ready to explore?</h2>
-        <button className="bg-orange-500 px-6 py-2 font-serif rounded-lg hover:bg-orange-600 transition">
+        <button 
+           className="bg-orange-500 px-6 py-2 font-serif rounded-lg hover:bg-orange-600 transition"
+           onClick={() => document.getElementById("index").scrollIntoView({ behavior: "smooth" })}
+        >
           Try Prediction
         </button>
       </div>
