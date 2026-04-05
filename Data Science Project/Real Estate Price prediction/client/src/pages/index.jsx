@@ -124,6 +124,10 @@ const IndexComponent = () => {
             <p className="text-xs text-stone-700 tracking-widest mt-1.5 uppercase">Indian Rupees</p>
           </div>
         )}
+
+        <div className="mt-3">
+          <h2 className="text-amber-700 ">This answer is AI generated so can be used for <span className="md:ms-30 lg:ms-30">reference</span></h2>
+        </div>
         <div className="absolute bottom-0 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-stone-700 to-transparent" />
       </div>
 
