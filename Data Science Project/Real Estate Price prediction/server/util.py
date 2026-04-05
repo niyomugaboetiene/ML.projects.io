@@ -95,21 +95,17 @@ def load_saved_artifacts():
     if not os.path.exists(MODEL_FILE):
         raise FileNotFoundError(f"Model pickle not found at {MODEL_FILE}")
 
-    # Load columns
     with open(COLUMNS_FILE, "r") as f:
         __data_columns = json.load(f)['data_columns']
         __location = __data_columns[3:]  
 
-    # Load model
     with open(MODEL_FILE, "rb") as f:
         __model = pickle.load(f)
 
     print("Artifacts loaded successfully!")
     print(f"Available locations: {__location}")
 
-# ------------------------
-# Main check
-# ------------------------
+
 if __name__ == "__main__":
     load_saved_artifacts()
     # Test predictions
