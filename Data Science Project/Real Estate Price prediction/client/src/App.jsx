@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import IndexComponent from './pages/index';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './pages/layout';

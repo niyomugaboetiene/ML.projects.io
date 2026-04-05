@@ -4,11 +4,9 @@ import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <div className="bg-gradient-to-br from-stone-950 via-stone-950 to-stone-900">
-            {/* Main Footer Content */}
             <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-12">
                 <div className="flex flex-col lg:flex-row rounded-xl bg-stone-900/50 backdrop-blur-md shadow-lg overflow-hidden">
                     
-                    {/* Logo and Description Section */}
                     <div className="w-full lg:w-80 p-4 md:p-6 text-center lg:text-left">
                         <img src={Logo} className="w-48 md:w-60 lg:w-72 mx-auto lg:mx-0" alt="Logo" />
                         <p className="text-amber-700 font-serif text-sm md:text-base lg:text-lg mt-2 md:-mt-2">
@@ -16,10 +14,8 @@ const Footer = () => {
                         </p>
                     </div>
 
-                    {/* Links Sections */}
                     <div className="flex flex-col md:flex-row flex-wrap justify-center lg:justify-start gap-6 md:gap-8 lg:gap-12 p-4 md:p-6 mt-4 md:mt-8 lg:mt-6">
                         
-                        {/* About Section */}
                         <div className="flex flex-col items-center md:items-start text-amber-700 font-serif min-w-[120px]">
                             <span className="text-lg md:text-xl font-bold mb-2 md:mb-3 border-b-2 border-amber-600 inline-block">About</span>
                             <Link className="hover:underline hover:text-amber-500 transition duration-300 text-sm md:text-base py-1">Our Story</Link>
@@ -28,7 +24,6 @@ const Footer = () => {
                             <Link className="hover:underline hover:text-amber-500 transition duration-300 text-sm md:text-base py-1">Resources</Link>
                         </div>
 
-                        {/* Support Section */}
                         <div className="flex flex-col items-center md:items-start text-amber-700 font-serif min-w-[120px]">
                             <span className="text-lg md:text-xl font-bold mb-2 md:mb-3 border-b-2 border-amber-600 inline-block">Support</span>
                             <Link className="hover:underline hover:text-amber-500 transition duration-300 text-sm md:text-base py-1">FAQ</Link>
@@ -37,7 +32,6 @@ const Footer = () => {
                             <Link className="hover:underline hover:text-amber-500 transition duration-300 text-sm md:text-base py-1">Terms of Service</Link>
                         </div>
 
-                        {/* Find Us Section */}
                         <div className="flex flex-col items-center md:items-start text-amber-700 font-serif min-w-[120px]">
                             <span className="text-lg md:text-xl font-bold mb-2 md:mb-3 border-b-2 border-amber-600 inline-block">Find Us</span>
                             <Link className="hover:underline hover:text-amber-500 transition duration-300 text-sm md:text-base py-1">Events</Link>
@@ -45,7 +39,6 @@ const Footer = () => {
                             <Link className="hover:underline hover:text-amber-500 transition duration-300 text-sm md:text-base py-1">Newsletter</Link>
                         </div>
 
-                        {/* Social Media Section */}
                         <div className="flex flex-col items-center md:items-start font-serif min-w-[140px]">
                             <span className="text-lg md:text-xl text-amber-700 font-bold mb-2 md:mb-3 border-b-2 border-amber-600 inline-block">Our Social</span>
                             <div className="flex flex-row md:flex-col gap-3 md:gap-2 mt-1">
@@ -90,7 +83,6 @@ const Footer = () => {
                 </div>
             </div>
 
-            {/* Copyright Section */}
             <div className="border-t border-stone-800 mt-4 md:mt-6">
                 <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 md:py-6">
                     <p className="text-sm md:text-base lg:text-lg text-center text-gray-300 font-serif">
