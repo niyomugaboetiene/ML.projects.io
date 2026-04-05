@@ -21,7 +21,7 @@ const InputField = ({ label, sublabel, onChange, icon }) => (
         type="number"
         onChange={(e) => onChange(e.target.value)}
         required
-        className={`w-full bg-stone-950 border border-stone-800 rounded-lg py-3 pr-4 text-stone-200 text-base outline-none transition-colors duration-200 focus:border-amber-700 placeholder-stone-700 [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none ${icon ? "pl-9" : "pl-4"}`}
+        className={`w-full border border-stone-800 rounded-lg py-3 pr-4  text-base outline-none transition-colors duration-200 focus:border-amber-700 placeholder-stone-700 bg-stone-950 text-stone-200 appearance-none focus:bg-stone-950 focus:text-stone-200 ${icon ? "pl-9" : "pl-4"}`}
       />
     </div>
   </div>
@@ -93,7 +93,7 @@ const IndexComponent = () => {
               value={selectedLocation}
               onChange={(e) => setSelectedLocation(e.target.value)}
               required
-              className="w-full bg-stone-950 border border-stone-800 rounded-lg py-3 pl-4 pr-9 text-stone-200 text-sm outline-none appearance-none cursor-pointer transition-colors duration-200 focus:border-amber-700"
+              className="w-full  border bg-stone-950  appearance-none focus:bg-stone-950 focus:text-stone-200 border-stone-800 rounded-lg py-3 pl-4 pr-9 text-stone-200 text-sm outline-none  cursor-pointer transition-colors duration-200 focus:border-amber-700"
             >
               {locations?.map((loc, idx) => (
                 <option value={loc} key={idx} className="bg-stone-900">{loc}</option>
