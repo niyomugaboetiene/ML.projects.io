@@ -10,7 +10,7 @@ const HomeComponent = () => {
         <div className="bg-stone-950 h-screen">
             <div className="fixed top-0 right-0 left-0 bg-stone-950  flex p-3 justify-between shadow-lg  border-b border-orange-600 z-50">
                 <img src={vector} alt="Logo" className="w-25 relative left-4 hover:scale-150 transition duration-200" title="Logo"/>
-                <nav className="justify-between space-x-24 flex text-amber-700 font-serif items-center text-[18px]">
+                <nav className="justify-between sm:w-12 space-x-24 flex text-amber-700 font-serif items-center text-[18px]">
                    <button 
                       className="hover:text-amber-800 transition-colors" 
                       onClick={() => document.getElementById("home").scrollIntoView({ behavior: "smooth" })}
@@ -59,7 +59,7 @@ const HomeComponent = () => {
                        </div>
                 </div>
 
-                <img src={house} alt="House" title="House" className="w-250 rounded-full relative -right-90 top-30"/>
+                <img src={house} alt="House" title="House" className="sm:100 md:w-150 lg:w-250 rounded-full relative -right-90 top-30"/>
             </div>
         </div>
     )
