@@ -95,7 +95,7 @@ const IndexComponent = () => {
               required
               className="w-full bg-stone-950 border border-stone-800 rounded-lg py-3 pl-4 pr-9 text-stone-200 text-sm outline-none appearance-none cursor-pointer transition-colors duration-200 focus:border-amber-700"
             >
-              {locations.map((loc, idx) => (
+              {locations?.map((loc, idx) => (
                 <option value={loc} key={idx} className="bg-stone-900">{loc}</option>
               ))}
             </select>
