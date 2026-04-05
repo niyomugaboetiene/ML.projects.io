@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-
 const InputField = ({ label, sublabel, onChange, icon }) => (
   <div className="mb-5">
     <div className="flex justify-between items-baseline mb-1.5">
@@ -36,11 +35,12 @@ const IndexComponent = () => {
   const [bhk, setBhk] = useState("");
   const [bath, setBath] = useState("");
   const [loading, setLoading] = useState(false);
+  const BACKEND_URL = import.meta.env.BACKEND_URL;
 
   useEffect(() => {
     const GetLocationNames = async () => {
       try {
-        const res = await axios.get("http://127.0.0.1:5000/get_location_names");
+        const res = await axios.get(`${BACKEND_URL}/get_location_names`);
         setLocations(res.data.locations);
         if (res.data.locations?.length > 0) setSelectedLocation(res.data.locations[0]);
       } catch (err) {
@@ -53,7 +53,7 @@ const IndexComponent = () => {
   const HandlePredict = async () => {
     setLoading(true);
     try {
-      const res = await axios.post("http://127.0.0.1:5000/predict_home_price", {
+      const res = await axios.post(`${BACKEND_URL}/predict_home_price`, {
         location: selectedLocation,
         total_sqft,
         bhk,
