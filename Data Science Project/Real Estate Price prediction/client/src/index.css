@@ -1,7 +1,35 @@
 @import "tailwindcss";
 
+/* Force color scheme to prevent device overrides */
+:root {
+  color-scheme: dark only;
+  forced-color-adjust: none;
+}
+
 html, body, #root {
   height: 100%;
-  background-color: #1a1a1a; /* matches bg-stone-950 */
-  color: #f5f5f5; /* matches text-stone-200 */
+  background-color: #1c1917 !important; /* stone-950 with !important */
+  color: #e7e5e4 !important; /* stone-200 */
+}
+
+/* Prevent any forced color overrides from device settings */
+@media (forced-colors: active) {
+  body {
+    forced-color-adjust: none;
+  }
+}
+
+/* Ensure inputs don't get auto-filled with device colors */
+input, select, textarea {
+  color-scheme: dark;
+}
+
+/* Override any browser auto-fill styles */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #1c1917 inset !important;
+  -webkit-text-fill-color: #e7e5e4 !important;
+  caret-color: #e7e5e4 !important;
 }
