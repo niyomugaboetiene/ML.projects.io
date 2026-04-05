@@ -26,19 +26,23 @@ def get_estimate_price(location, sqft, bhk, bath):
 
     return round(__model.predict([x])[0])
 
-ARTIFACTS_DIR = os.path.join(os.path.dirname(__file__), "artifacts")
 def load_saved_artifacts():
     print("Loading saved artifacts start")
 
     global __data_columns
     global __location 
+   
+    ARTIFACTS_DIR = os.path.join(os.path.dirname(__file__), "artifacts")
+    COLUMNS_FILE = os.path.join(ARTIFACTS_DIR, "columns.json")
+    MODEL_FILE = os.path.join(ARTIFACTS_DIR, "Real_estate_price_prediction.pickle")
 
-    with open(os.path.join(ARTIFACTS_DIR, "columns.json"), "r") as f:
+
+    with open(COLUMNS_FILE, "r") as f:
        __data_columns =  json.load(f)['data_columns']
        __location = __data_columns[3:]
 
     global __model
-    with open(os.path.join(ARTIFACTS_DIR, "Real_estate_price_prediction.pickle"), "rb") as f:
+    with open(MODEL_FILE, "rb") as f:
         __model = pickle.load(f)
 
     print("Loading saved artifacts is done")
