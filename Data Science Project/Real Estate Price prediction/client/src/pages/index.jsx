@@ -70,7 +70,7 @@ const IndexComponent = () => {
   return (
     <div className="min-h-screen bg-stone-950 flex items-center justify-center px-4 font-serif">
 
-      <div className="w-full max-w-sm bg-stone-900 border border-stone-800 rounded-2xl px-8 py-9 relative overflow-hidden">
+      <div className="w-full max-w-sm bg-stone-900 border border-stone-800 mt-12 rounded-2xl px-8 py-9 relative overflow-hidden">
 
         <div className="absolute top-0 left-[10%] right-[10%] h-px bg-linear-to-r from-transparent via-amber-700 to-transparent" />
 
