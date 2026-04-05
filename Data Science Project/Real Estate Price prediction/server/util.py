@@ -47,7 +47,7 @@
 #     print(get_estimate_price('1st phase jp nagar', 500, 2, 1))
 #     print(get_estimate_price('yeshwanthpur', 1000, 3, 2))
 #     print(get_estimate_price('sarjapur', 700, 2, 2))
-
+# util.py
 import json
 import numpy as np
 import pickle
@@ -56,7 +56,6 @@ import os
 __location = None
 __data_columns = None
 __model = None
-
 
 def get_location_names():
     return __location
@@ -77,38 +76,25 @@ def get_estimate_price(location, sqft, bhk, bath):
 
     return round(__model.predict([x])[0])
 
+ARTIFACTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "artifacts")
 
 def load_saved_artifacts():
-    global __data_columns
-    global __location
-    global __model
-
+    global __data_columns, __location, __model
     print("Loading saved artifacts...")
 
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    ARTIFACTS_DIR = os.path.join(base_dir, "artifacts")
-    COLUMNS_FILE = os.path.join(ARTIFACTS_DIR, "columns.json")
-    MODEL_FILE = os.path.join(ARTIFACTS_DIR, "Real_estate_price_prediction.pickle")
+    columns_file = os.path.join(ARTIFACTS_DIR, "columns.json")
+    model_file = os.path.join(ARTIFACTS_DIR, "Real_estate_price_prediction.pickle")
 
-    if not os.path.exists(COLUMNS_FILE):
-        raise FileNotFoundError(f"columns.json not found at {COLUMNS_FILE}")
-    if not os.path.exists(MODEL_FILE):
-        raise FileNotFoundError(f"Model pickle not found at {MODEL_FILE}")
+    if not os.path.exists(columns_file):
+        raise FileNotFoundError(f"{columns_file} not found on server!")
+    if not os.path.exists(model_file):
+        raise FileNotFoundError(f"{model_file} not found on server!")
 
-    with open(COLUMNS_FILE, "r") as f:
+    with open(columns_file, "r") as f:
         __data_columns = json.load(f)['data_columns']
         __location = __data_columns[3:]  
 
-    with open(MODEL_FILE, "rb") as f:
+    with open(model_file, "rb") as f:
         __model = pickle.load(f)
 
-    print("Artifacts loaded successfully!")
-    print(f"Available locations: {__location}")
-
-
-if __name__ == "__main__":
-    load_saved_artifacts()
-    # Test predictions
-    print(get_estimate_price('1st phase jp nagar', 500, 2, 1))
-    print(get_estimate_price('yeshwanthpur', 1000, 3, 2))
-    print(get_estimate_price('sarjapur', 700, 2, 2))
+    print(f"Artifacts loaded: {len(__location)} locations, model loaded.")

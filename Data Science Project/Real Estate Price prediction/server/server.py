@@ -41,18 +41,16 @@
 #     util.load_saved_artifacts()
 #     app.run()
 
-# server.py
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import util
-import os
 
 app = Flask(__name__)
 CORS(app)
 
-# -----------------------
-# Routes
-# -----------------------
+# Load artifacts immediately
+util.load_saved_artifacts()
+
 @app.route("/get_location_names")
 def get_location_names():
     locations = util.get_location_names()
@@ -74,16 +72,6 @@ def predict_home_price():
     response.headers.add("Access-Control-Allow-Origin", "*")
     return response
 
-# -----------------------
-# Run server
-# -----------------------
 if __name__ == "__main__":
-    print("Starting Flask server...")
-    
-    # Make sure we are using absolute path for artifacts
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    artifacts_path = os.path.join(base_dir, "artifacts")
-    print(f"Artifacts folder path: {artifacts_path}")
-
-    util.load_saved_artifacts()  # Now it uses absolute paths inside util.py
+    print("Flask server starting...")
     app.run(host="0.0.0.0", port=5000)
