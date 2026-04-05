@@ -49,3 +49,7 @@ if __name__ == "__main__":
     print(get_estimate_price('1st phase jp nagar', 500, 2, 1))
     print(get_estimate_price('yeshwanthpur', 1000, 3, 2))
     print(get_estimate_price('sarjapur', 700, 2, 2))
+
+    print("Current working dir:", os.getcwd())
+    print("File exists?", os.path.exists(os.path.join(ARTIFACTS_DIR, "columns.json")))
+    print("Model exists?", os.path.exists(os.path.join(ARTIFACTS_DIR, "Real_estate_price_prediction.pickle")))
