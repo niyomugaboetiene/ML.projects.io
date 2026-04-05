@@ -35,7 +35,7 @@ const IndexComponent = () => {
   const [bhk, setBhk] = useState("");
   const [bath, setBath] = useState("");
   const [loading, setLoading] = useState(false);
-  const BACKEND_URL = import.meta.env.BACKEND_URL;
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
     const GetLocationNames = async () => {
