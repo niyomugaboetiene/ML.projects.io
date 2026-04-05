@@ -16,7 +16,7 @@ const HomeComponent = () => {
                     title="Logo"
                 />
                 
-                <nav className="hidden md:flex justify-between space-x-8 lg:space-x-24 w-auto md:w-2/3 lg:w-1/2 text-amber-700 font-serif items-center text-sm md:text-base lg:text-[18px]">
+                <nav className="hidden md:flex justify-center space-x-8 lg:space-x-24 w-auto md:w-2/3 lg:w-1/2 text-amber-700 font-serif items-center text-sm md:text-base lg:text-[18px]">
                    <button 
                       className="hover:text-amber-800 transition-colors" 
                       onClick={() => document.getElementById("home").scrollIntoView({ behavior: "smooth" })}
