@@ -8,7 +8,7 @@ const InputField = ({ label, sublabel, onChange, icon }) => (
         {label}
       </label>
       {sublabel && (
-        <span className="text-xs text-stone-600 tracking-wide">{sublabel}</span>
+        <span className="text-xs text-stone-600 tracking -wide">{sublabel}</span>
       )}
     </div>
     <div className="relative">
@@ -21,7 +21,7 @@ const InputField = ({ label, sublabel, onChange, icon }) => (
         type="number"
         onChange={(e) => onChange(e.target.value)}
         required
-        className={`w-full border border-stone-800 rounded-lg py-3 pr-4  text-base outline-none transition-colors duration-200 focus:border-amber-700 placeholder-stone-700 bg-stone-950 text-stone-200 appearance-none focus:bg-stone-950 focus:text-stone-200 ${icon ? "pl-9" : "pl-4"}`}
+        className={`w-full border border-stone-800 rounded-lg py-3 pr-4 text-base outline-none transition-colors duration-200 focus:border-amber-700 placeholder-stone-700 bg-stone-950 text-stone-200 appearance-none focus:bg-stone-950 focus:text-stone-200 ${icon ? "pl-9" : "pl-4"}`}
       />
     </div>
   </div>
@@ -35,18 +35,30 @@ const IndexComponent = () => {
   const [bhk, setBhk] = useState("");
   const [bath, setBath] = useState("");
   const [loading, setLoading] = useState(false);
+
+  // ✅ NEW: loading state for locations
+  const [loadingLocations, setLoadingLocations] = useState(true);
+
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
     const GetLocationNames = async () => {
       try {
+        setLoadingLocations(true); // ✅ start loading
+
         const res = await axios.get(`${BACKEND_URL}/get_location_names`);
         setLocations(res.data.locations);
-        if (res.data.locations?.length > 0) setSelectedLocation(res.data.locations[0]);
+
+        if (res.data.locations?.length > 0) {
+          setSelectedLocation(res.data.locations[0]);
+        }
       } catch (err) {
         console.error(err);
+      } finally {
+        setLoadingLocations(false); // ✅ stop loading
       }
     };
+
     GetLocationNames();
   }, []);
 
@@ -69,14 +81,17 @@ const IndexComponent = () => {
 
   return (
     <div className="min-h-screen bg-stone-950 flex items-center justify-center px-4 font-serif">
-
       <div className="w-full max-w-sm bg-stone-900 border border-stone-800 mt-12 rounded-2xl px-8 py-9 relative overflow-hidden">
 
         <div className="absolute top-0 left-[10%] right-[10%] h-px bg-linear-to-r from-transparent via-amber-700 to-transparent" />
 
         <div className="text-center mb-8">
-          <p className="text-xs tracking-[0.2em] font-mono uppercase text-amber-700 mb-2">Bengaluru Real Estate Valuation</p>
-          <h1 className="text-xl text-stone-200 font-normal tracking-wide">Price Estimator</h1>
+          <p className="text-xs tracking-[0.2em] font-mono uppercase text-amber-700 mb-2">
+            Bengaluru Real Estate Valuation
+          </p>
+          <h1 className="text-xl text-stone-200 font-normal tracking-wide">
+            Price Estimator
+          </h1>
           <div className="w-8 h-px bg-stone-700 mx-auto mt-3" />
         </div>
 
@@ -88,24 +103,40 @@ const IndexComponent = () => {
           <label className="block text-xs tracking-widest uppercase text-amber-700 font-medium mb-1.5">
             Location
           </label>
+
           <div className="relative">
-            <select
-              value={selectedLocation}
-              onChange={(e) => setSelectedLocation(e.target.value)}
-              required
-              className="w-full  border bg-stone-950  appearance-none focus:bg-stone-950 focus:text-stone-200 border-stone-800 rounded-lg py-3 pl-4 pr-9 text-stone-200 text-sm outline-none  cursor-pointer transition-colors duration-200 focus:border-amber-700"
-            >
-              {locations?.map((loc, idx) => (
-                <option value={loc} key={idx} className="bg-stone-900">{loc}</option>
-              ))}
-            </select>
-            <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-stone-500 text-xs pointer-events-none">▾</span>
+            {loadingLocations ? (
+              // ✅ Spinner UI
+              <div className="w-full border border-stone-800 rounded-lg py-3 text-center text-stone-500 text-sm bg-stone-950 flex items-center justify-center gap-2">
+                <div className="w-4 h-4 border-2 border-stone-600 border-t-amber-700 rounded-full animate-spin"></div>
+                Loading locations...
+              </div>
+            ) : (
+              <>
+                <select
+                  value={selectedLocation}
+                  onChange={(e) => setSelectedLocation(e.target.value)}
+                  required
+                  className="w-full border bg-stone-950 appearance-none focus:bg-stone-950 focus:text-stone-200 border-stone-800 rounded-lg py-3 pl-4 pr-9 text-stone-200 text-sm outline-none cursor-pointer transition-colors duration-200 focus:border-amber-700"
+                >
+                  {locations?.map((loc, idx) => (
+                    <option value={loc} key={idx} className="bg-stone-900">
+                      {loc}
+                    </option>
+                  ))}
+                </select>
+
+                <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-stone-500 text-xs pointer-events-none">
+                  ▾
+                </span>
+              </>
+            )}
           </div>
         </div>
 
         <button
           onClick={HandlePredict}
-          disabled={loading}
+          disabled={loading || loadingLocations} // ✅ also disable if loading locations
           className={`w-full py-3.5 rounded-lg text-xs tracking-[0.18em] uppercase font-bold transition-all duration-200 ${
             loading
               ? "bg-stone-800 text-stone-600 cursor-not-allowed"
@@ -117,22 +148,33 @@ const IndexComponent = () => {
 
         {predicted_result && (
           <div className="mt-6 p-5 bg-stone-950 border border-stone-800 rounded-xl text-center animate-[fadeIn_0.4s_ease]">
-            <p className="text-xs tracking-[0.16em] uppercase text-stone-600 mb-2">Estimated Value</p>
+            <p className="text-xs tracking-[0.16em] uppercase text-stone-600 mb-2">
+              Estimated Value
+            </p>
             <p className="text-2xl text-amber-600 tabular-nums tracking-wide">
               ₹{Number(predicted_result).toLocaleString("en-IN")}
             </p>
-            <p className="text-xs text-stone-700 tracking-widest mt-1.5 uppercase">Indian Rupees</p>
+            <p className="text-xs text-stone-700 tracking-widest mt-1.5 uppercase">
+              Indian Rupees
+            </p>
           </div>
         )}
 
         <div className="mt-3">
-          <h2 className="text-amber-700 ">This answer is AI generated so can be used for <span className="md:ms-30 lg:ms-30">reference</span></h2>
+          <h2 className="text-amber-700">
+            This answer is AI generated so can be used for{" "}
+            <span className="md:ms-30 lg:ms-30">reference</span>
+          </h2>
         </div>
+
         <div className="absolute bottom-0 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-stone-700 to-transparent" />
       </div>
 
       <style>{`
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(6px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
       `}</style>
     </div>
   );
