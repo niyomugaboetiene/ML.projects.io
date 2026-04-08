@@ -34,31 +34,36 @@ const IndexComponent = () => {
   const [total_sqft, setTotal_Sqft] = useState("");
   const [bhk, setBhk] = useState("");
   const [bath, setBath] = useState("");
+
   const [loading, setLoading] = useState(false);
 
-  // ✅ NEW: loading state for locations
+  // ✅ NEW STATES
   const [loadingLocations, setLoadingLocations] = useState(true);
+  const [error, setError] = useState(null);
 
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
-  useEffect(() => {
-    const GetLocationNames = async () => {
-      try {
-        setLoadingLocations(true); // ✅ start loading
+  // ✅ FUNCTION (so we can retry)
+  const GetLocationNames = async () => {
+    try {
+      setLoadingLocations(true);
+      setError(null);
 
-        const res = await axios.get(`${BACKEND_URL}/get_location_names`);
-        setLocations(res.data.locations);
+      const res = await axios.get(`${BACKEND_URL}/get_location_names`);
+      setLocations(res.data.locations);
 
-        if (res.data.locations?.length > 0) {
-          setSelectedLocation(res.data.locations[0]);
-        }
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoadingLocations(false); // ✅ stop loading
+      if (res.data.locations?.length > 0) {
+        setSelectedLocation(res.data.locations[0]);
       }
-    };
+    } catch (err) {
+      console.error(err);
+      setError("Failed to load locations");
+    } finally {
+      setLoadingLocations(false);
+    }
+  };
 
+  useEffect(() => {
     GetLocationNames();
   }, []);
 
@@ -105,13 +110,28 @@ const IndexComponent = () => {
           </label>
 
           <div className="relative">
+
+            {/* ✅ LOADING */}
             {loadingLocations ? (
-              // ✅ Spinner UI
               <div className="w-full border border-stone-800 rounded-lg py-3 text-center text-stone-500 text-sm bg-stone-950 flex items-center justify-center gap-2">
                 <div className="w-4 h-4 border-2 border-stone-600 border-t-amber-700 rounded-full animate-spin"></div>
                 Loading locations...
               </div>
+
+            ) : error ? (
+              /* ✅ ERROR STATE */
+              <div className="w-full border border-stone-800 rounded-lg py-3 text-center text-red-500 text-sm bg-stone-950">
+                {error}
+                <button
+                  onClick={GetLocationNames}
+                  className="block mt-2 text-amber-600 underline"
+                >
+                  Retry
+                </button>
+              </div>
+
             ) : (
+              /* ✅ NORMAL SELECT */
               <>
                 <select
                   value={selectedLocation}
@@ -131,12 +151,13 @@ const IndexComponent = () => {
                 </span>
               </>
             )}
+
           </div>
         </div>
 
         <button
           onClick={HandlePredict}
-          disabled={loading || loadingLocations} // ✅ also disable if loading locations
+          disabled={loading || loadingLocations || error}
           className={`w-full py-3.5 rounded-lg text-xs tracking-[0.18em] uppercase font-bold transition-all duration-200 ${
             loading
               ? "bg-stone-800 text-stone-600 cursor-not-allowed"
