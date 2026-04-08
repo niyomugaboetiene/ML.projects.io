@@ -37,13 +37,11 @@ const IndexComponent = () => {
 
   const [loading, setLoading] = useState(false);
 
-  // ✅ NEW STATES
   const [loadingLocations, setLoadingLocations] = useState(true);
   const [error, setError] = useState(null);
 
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
-  // ✅ FUNCTION (so we can retry)
   const GetLocationNames = async () => {
     try {
       setLoadingLocations(true);
@@ -111,7 +109,6 @@ const IndexComponent = () => {
 
           <div className="relative">
 
-            {/* ✅ LOADING */}
             {loadingLocations ? (
               <div className="w-full border border-stone-800 rounded-lg py-3 text-center text-stone-500 text-sm bg-stone-950 flex items-center justify-center gap-2">
                 <div className="w-4 h-4 border-2 border-stone-600 border-t-amber-700 rounded-full animate-spin"></div>
@@ -119,7 +116,6 @@ const IndexComponent = () => {
               </div>
 
             ) : error ? (
-              /* ✅ ERROR STATE */
               <div className="w-full border border-stone-800 rounded-lg py-3 text-center text-red-500 text-sm bg-stone-950">
                 {error}
                 <button
@@ -131,7 +127,6 @@ const IndexComponent = () => {
               </div>
 
             ) : (
-              /* ✅ NORMAL SELECT */
               <>
                 <select
                   value={selectedLocation}
